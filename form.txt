@@ -14,8 +14,6 @@ font-family: Arial, sans-serif;
 background-color: #f4f4f4;
 margin: 0;
 padding: 20px;
-Internet Programming Lab T22
-79. Khalid Qureshi
 }
 .contact-form {
 background: #fff;
@@ -53,8 +51,7 @@ border-radius: 5px;
 .contact-form button:hover {
 background-color: #218838;
 }
-Internet Programming Lab T22
-79. Khalid Qureshi
+
 .error {
 color: red;
 font-size: 0.9em;
@@ -90,8 +87,7 @@ event.preventDefault();
 document.getElementById('emailError').textContent = '';
 document.getElementById('subjectError').textContent = '';
 document.getElementById('messageError').textContent = '';
-Internet Programming Lab T22
-79. Khalid Qureshi
+
 let email = document.getElementById('email').value.trim();
 let subject = document.getElementById('subject').value.trim();
 let message = document.getElementById('message').value.trim();
