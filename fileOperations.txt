@@ -1,0 +1,57 @@
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, "example.txt");
+const newFilePath = path.join(__dirname, "renamed.txt");
+
+function createFile() {
+    fs.writeFile(filePath, "New File Created, Hello World", (err)=>{
+        if (err) {
+            console.log("Error Creating new file");
+            return;
+        }
+        console.log("File created successfully");
+    });
+}
+
+function readFile() {
+    fs.readFile(filePath, 'utf8', (err,data)=>{
+        if (err) {
+            console.log("Error reading file");
+            return;
+        }
+        console.log("Contents: ", data);
+    })
+}
+
+function appendToFile() {
+    fs.appendFile(filePath, "\nNew data for file", (err) => {
+        if (err) {
+            console.log("Error appending to file");
+            return;
+        }
+    })
+    console.log("Appended to file successfully");
+}
+
+function deleteFile() {
+    fs.unlink(filePath, (err)=>{
+        if (err) {
+            console.log("Error deleting file");
+            return;
+        }
+    })
+    console.log("Deleted file sucessfully");
+}
+
+function renameFile() {
+    fs.rename(filePath, newFilePath, (err)=> {
+        if (err) {
+            console.log("Error renaming file");
+            return;
+        }
+    })
+    console.log("Successfully renamed file");
+}
+
+renameFile();
