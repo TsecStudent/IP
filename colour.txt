@@ -1,0 +1,103 @@
+//html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Modes, Transitions, Animations, and Typography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="header">Color Modes & Animations</h1>
+  
+  <div class="color-modes">
+    <div class="rgb-color">RGB Color</div>
+    <div class="hex-color">HEX Color</div>
+    <div class="hsv-color">HSV Color</div>
+  </div>
+
+  <button class="transition-button">Hover over me!</button>
+  <div class="animated-box">Animated Box</div>
+
+</body>
+</html>
+
+
+//css
+  /* Load the custom font */
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/CustomFont.ttf') format('truetype');
+}
+
+/* Apply base styles */
+body {
+  font-family: 'CustomFont', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.header {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: rgb(34, 34, 34);
+}
+
+/* Color mode boxes */
+.color-modes {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.color-modes div {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.rgb-color { background-color: rgb(255, 0, 0); }
+.hex-color { background-color: #00FF00; }
+.hsv-color { background-color: hsl(240, 100%, 50%); }
+
+.transition-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s, transform 0.3s;
+}
+
+.transition-button:hover {
+  background-color: #357a38;
+  transform: scale(1.1);
+}
+
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ff5722;
+  margin-top: 30px;
+  border-radius: 50%;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
