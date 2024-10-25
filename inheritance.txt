@@ -1,0 +1,27 @@
+class Rectangle {
+    length;
+    breadth;
+
+    constructor(length ,breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    getArea() {
+        return this.length*this.breadth;
+    }
+}
+
+class Square extends Rectangle{
+    side;
+
+    constructor(side) {
+        super(side, side);
+    }
+    getArea(){
+        return super.getArea();
+    }
+}
+
+customSquare = new Square(5);
+console.log(customSquare.getArea());
